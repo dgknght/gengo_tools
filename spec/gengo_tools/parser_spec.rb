@@ -1,8 +1,5 @@
-require 'active_support'
-require 'active_support/core_ext'
-
 RSpec.describe GengoTools::Parser do
-  let(:parser) { GengoTools::Parser.new('spec/fixtures/files') }
+  let(:parser) { GengoTools::Parser.new('spec/fixtures/files/translations') }
   describe '#translations' do
     it 'returns a map of translations' do
       expect(parser.translations).to eq({
