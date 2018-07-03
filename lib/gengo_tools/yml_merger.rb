@@ -27,7 +27,7 @@ module GengoTools
     end
 
     def merge_file(lang, translations)
-      path = Dir["#{@dir}/#{lang}.yml"].first
+      path = Dir[file_search_path(lang)].first
       data = read_file(path)
       translations.each do |key, value|
         root_map = data[lang]
@@ -37,6 +37,14 @@ module GengoTools
         working_map[key] = value
       end
       write_file path, data
+    end
+
+    def file_search_path(lang)
+      if @file_root_name
+        "#{@dir}/#{@file_root_name}.#{lang}.yml"
+      else
+        "#{@dir}/#{lang}.yml"
+      end
     end
 
     def read_file(path)
