@@ -7,22 +7,22 @@ RSpec.describe GengoTools::Parser do
     it 'returns a map of translations' do
       expect(parser.translations).to eq({
         'Energy Tax' => {
-          'de-DE' => 'Energiesteuer',
+          'de' => 'Energiesteuer',
           'es-419' => 'Impuesto energético',
-          'es-ES' => 'Tasa energética',
-          'fr-FR' => 'Taxe sur l\'énergie',
+          'es' => 'Tasa energética',
+          'fr' => 'Taxe sur l\'énergie',
           'fr-CA' => 'Taxe sur l\'énergie',
-          'it-IT' => 'Imposta sull\'Energia',
-          'zh-CN' => '能源税'
+          'it' => 'Imposta sull\'Energia',
+          'zh' => '能源税'
         },
         'Service Fee' => {
-          'de-DE' => 'Bearbeitungsgebühr',
+          'de' => 'Bearbeitungsgebühr',
           'es-419' => 'Tarifa de servicio',
-          'es-ES' => 'Tarifa del servicio',
-          'fr-FR' => 'Frais de service',
+          'es' => 'Tarifa del servicio',
+          'fr' => 'Frais de service',
           'fr-CA' => 'Frais de service',
-          'it-IT' => 'Costi del servizio',
-          'zh-CN' => '服务费'
+          'it' => 'Costi del servizio',
+          'zh' => '服务费'
         }
       })
     end

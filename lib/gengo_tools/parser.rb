@@ -42,18 +42,9 @@ module GengoTools
     }.freeze
 
     REGIONS = {
-      'Spain' => 'ES',
       'Canada' => 'CA',
       'Latin America' => '419'
     }.freeze
-
-    DEFAULT_REGIONS = {
-      'de' => 'DE',
-      'es' => 'ES',
-      'fr' => 'FR',
-      'it' => 'IT',
-      'zh' => 'CN'
-    }
 
     def to_iso_language_code(value)
       matcher = /([^\(]+)(?:\s*\(([^\)]+)\))?/.match(value)
@@ -62,7 +53,7 @@ module GengoTools
       region = matcher[2]&.strip
 
       language_code = LANGUAGES[language]
-      region_code = REGIONS[region] || DEFAULT_REGIONS[language_code]
+      region_code = REGIONS[region]
 
       if region_code
         "#{language_code}-#{region_code}"
