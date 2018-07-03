@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Doug Knight"]
   spec.email         = ["dknight@getaroom.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Provides tools for working with Gengo translation files}
+  spec.description   = %q{Gengo doesn't offer a lot of tools for working with application i18n features. This gem seeks to make it easy to get transactions out of there files and into your application.}
+  spec.homepage      = "https://github.com/getaroom/gengo_tools"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,4 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'rspec-collection_matchers'
+  spec.add_development_dependency 'nokogiri'
+  spec.add_development_dependency 'activesupport'
 end
