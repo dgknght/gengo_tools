@@ -1,15 +1,13 @@
 # GengoTools
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gengo_tools`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+GengoTools provides a library of rake tasks that facilitate the incorporation of translations obtained from Gengo into a Rails application.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'gengo_tools'
+gem 'gengo_tools', group: :development
 ```
 
 And then execute:
@@ -22,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To import translations from a set of raw HTML files downloaded to
+`/MyDownloads/MyDownloadedFiles into the Rails app, targeting the
+localization files named `reservations.*`, putting the translations
+under the keys `reservations`, then `labels`.
+```
+rake gengo_tools:merge SOURCE_DIR=/MyDownloads/MyDownloadedTranslationFiles TARGET_DIR=config/locales KEY_PATH=reservations:labels FILE_ROOT_NAME=reservations
+```
 
 ## Development
 
