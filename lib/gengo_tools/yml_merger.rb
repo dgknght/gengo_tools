@@ -9,22 +9,12 @@ module GengoTools
     end
 
     def merge(translation_map)
-      pivot(translation_map).each do |lang, translations|
+      translation_map.each do |lang, translations|
         merge_file lang, translations
       end
     end
 
     private
-
-    def pivot(map)
-      # Maybe it's better to read it in this format in the first place?
-      map.each_with_object(Hash.new { |h, k| h[k] = Hash.new }) do |(text, translations), result|
-        key = text.titleize.underscore.gsub(/\s+/, '_')
-        translations.each_with_object(result) do |(lang, translation), r|
-          r[lang][key] = translation
-        end
-      end
-    end
 
     def merge_file(lang, translations)
       path = Dir[file_search_path(lang)].first

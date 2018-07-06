@@ -10,11 +10,17 @@ module GengoTools
     def translations
       files.each_with_object(empty_result) do |path, result|
         text, language_code, translation = parse_file(path)
-        result[text][language_code] = translation if translation
+        key = keyify text
+        result[language_code][key] = translation if translation
+        result['en'][key] = text
       end
     end
 
     private
+
+    def keyify(text)
+      text.underscore.gsub(/\s+/, '_')
+    end
 
     def empty_result
       Hash.new { |h, k| h[k] = Hash.new }

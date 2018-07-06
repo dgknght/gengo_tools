@@ -4,23 +4,37 @@ RSpec.describe GengoTools::YmlMerger do
   describe '#merge' do
     let(:translations) do
       {
-        'Energy Tax' => {
-          'de' => 'Energiesteuer',
-          'es-419' => 'Impuesto energético',
-          'es' => 'Tasa energética',
-          'fr' => 'Taxe sur l\'énergie',
-          'fr-CA' => 'Taxe sur l\'énergie',
-          'it' => 'Imposta sull\'Energia',
-          'zh' => '能源税'
+        'en' => {
+          'energy_tax' => 'Energy Tax',
+          'service_fee' => 'Service Fee'
         },
-        'Service Fee' => {
-          'de' => 'Bearbeitungsgebühr',
-          'es-419' => 'Tarifa de servicio',
-          'es' => 'Tarifa del servicio',
-          'fr' => 'Frais de service',
-          'fr-CA' => 'Frais de service',
-          'it' => 'Costi del servizio',
-          'zh' => '服务费'
+        'de' => {
+          'energy_tax' => 'Energiesteuer',
+          'service_fee' => 'Bearbeitungsgebühr'
+        },
+        'es-419' => {
+          'energy_tax' => 'Impuesto energético',
+          'service_fee' => 'Tarifa de servicio'
+        },
+        'es' => {
+          'energy_tax' => 'Tasa energética',
+          'service_fee' => 'Tarifa del servicio'
+        },
+        'fr' => {
+          'energy_tax' => 'Taxe sur l\'énergie',
+          'service_fee' => 'Frais de service'
+        },
+        'fr-CA' => {
+          'energy_tax' => 'Taxe sur l\'énergie',
+          'service_fee' => 'Frais de service'
+        },
+        'it' => {
+          'energy_tax' => 'Imposta sull\'Energia',
+          'service_fee' => 'Costi del servizio'
+        },
+        'zh' => {
+          'energy_tax' => '能源税',
+          'service_fee' => '服务费'
         }
       }
     end
